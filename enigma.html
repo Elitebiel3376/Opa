@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigma do Ecossistema</title>
+    <style>
+        /* Estilos CSS baseados na Netflix */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+        }
+
+        header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        main {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #fff;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 10px);
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff0000;
+        }
+
+        a {
+            color: #e50914;
+            text-decoration: none;
+        }
+
+        #resultado {
+            display: none;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        #resultado h2 {
+            margin-top: 0;
+            color: #fff;
+        }
+
+        #resultado p {
+            margin-bottom: 10px;
+            color: #ddd;
+        }
+
+        #erro {
+            display: none;
+            background-color: #d32f2f;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Enigma do Ecossistema</h1>
+    </header>
+    <main>
+        <p>Qual é o maior bioma terrestre do mundo?</p>
+        <div id="erro">Resposta incorreta. Tente novamente.</div>
+        <form action="javascript:void(0);" onsubmit="checkAnswer()">
+            <input type="text" id="resposta" placeholder="Sua resposta">
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="resultado">
+            <h2>Parabéns!</h2>
+            <p>Você acertou o enigma!</p>
+            <p>O maior bioma terrestre do mundo é a Taiga.</p>
+            <a href="enigma1.html">continua enigma</a>
+        </div>
+    </main>
+    <script>
+        function checkAnswer() {
+            var resposta = document.getElementById('resposta').value.trim().toLowerCase();
+            if (resposta === 'taiga') {
+                document.getElementById('resultado').style.display = 'block';
+                document.getElementById('erro').style.display = 'none';
+            } else {
+                document.getElementById('resultado').style.display = 'none';
+                document.getElementById('erro').style.display = 'block';
+            }
+            return false; // Impede o envio do formulário
+        }
+    </script>
+</body>
+</html>
